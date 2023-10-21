@@ -13,13 +13,11 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-boot-example</name>
 	<description>Demo project for Spring Boot</description>
-	<organization>
-		<name>spencercode</name>
-		<url>https://spencercode.example</url>
-	</organization>
 	<properties>
 		<java.version>17</java.version>
 		<docker.username>jamiechance</docker.username>
+		<docker.image.name>spring-boot-example</docker.image.name>
+		<docker.image.tag />
 	</properties>
 	<dependencies>
 		<dependency>
@@ -173,7 +171,7 @@
 						</platforms>
 					</from>
 					<to>
-						<image>docker.io/${docker.username}/${project.artifactId}:${project.version}</image>
+						<image>docker.io/${docker.username}/${docker.image.name}:${docker.image.tag}</image>
 						<tags>
 							<tag>latest</tag>
 						</tags>
