@@ -54,7 +54,7 @@ jobs:
           echo "Dockerrun.aws.json after updating tag"
           cat Dockerrun.aws.json
       - name: Deploy to Elastic BeanStalk
-        uses: einaregilsson/beanstalk-deploy@21
+        uses: einaregilsson/beanstalk-deploy@v21
         with:
           aws-access-key: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
