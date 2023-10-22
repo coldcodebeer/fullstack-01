@@ -28,13 +28,12 @@ jobs:
 
     defaults:
       run:
-        working-directory: backend
+        working-directory: ./backend
 
     steps:
       - name: Send Slack Message
-        working-directory: /home/ubuntu/actions-runner/_work/${{ github.repository }}
         run: >
-          curl && curl -X POST -H 'Content-type: application/json'
+          curl && curl -v -X POST -H 'Content-type: application/json'
           --data '
             {"text": "Deployment started :postgres_bar: :fingerscrossed:"}
           '
