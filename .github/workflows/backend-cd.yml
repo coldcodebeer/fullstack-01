@@ -37,7 +37,7 @@ jobs:
         with:
           payload: |
             {
-              "text": "Deployment started :postgres_bar: :fingerscrossed:"
+              "text": "Deployment started"
             }
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
