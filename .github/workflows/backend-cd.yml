@@ -31,16 +31,19 @@ jobs:
         working-directory: ./backend
 
     steps:
-      - name: Send GitHub Action trigger data to Slack workflow
-        id: slack
-        uses: slackapi/slack-github-action@v1.24.0
+      - name: Send Slack message
+        uses: marvinpinto/action-slack@v3
         with:
-          payload: |
-            {
-              "text": "Deployment started"
-            }
+          status: ${{ job.status }}
+          mentions: "here"
+          author_name: ${{ github.actor }}
+          author_icon: ${{ github.actor }}
+          title: "GitHub Actions"
+          title_link: ${{ github.event.repository.html_url }}
+          footer: "GitHub Actions"
+          fields: "Field 1: Value 1, Field 2: Value 2"
         env:
-          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_URL }}
       - uses: actions/checkout@v3
       - uses: actions/setup-java@v3
         with:
