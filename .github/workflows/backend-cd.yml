@@ -31,9 +31,11 @@ jobs:
         working-directory: ./backend
 
     steps:
-      - name: Send Slack Message
+      - name: test
         run: |
-          echo "SLACK_WEBHOOK_URL is: $SLACK_WEBHOOK_URL" 
+          echo "SLACK_WEBHOOK_URL is: $SLACK_WEBHOOK_URL"
+          echo "Working directory is ${{ env.working-directory }}"
+            ls ${{ env.working-directory }}
           curl -v -X POST -H 'Content-type: application/json' --data '{
             "text": "Hello~SLACK"
           }' ${{ secrets.SLACK_WEBHOOK_URL }}
